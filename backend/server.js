@@ -42,8 +42,9 @@ app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
 });
 
-const port = process.env.Port || 5000;
+// const port = process.env.Port || 5000;
+const PORT = parseInt(process.env.PORT || "4000", 10);
 
-app.listen(port, () => {
-  console.log(`server listening to http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`server listening to http://localhost:${PORT}`);
 });
