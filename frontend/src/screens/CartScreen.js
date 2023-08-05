@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Store } from "../store";
 import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/col";
+import Col from "react-bootstrap/Col";
 import MessageBox from "../component/MessageBox";
 import ListGroup from "react-bootstrap/ListGroup";
 import Button from "react-bootstrap/Button";
