@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* mystyles.css */
+.navbar-light .nav-link .navbar-brand {
+  color: white;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+  margin-top: 2px;
+}
+.navbar-light .navbar-brand {
+  color: white;
+}
+
+.site-container {
+  min-height: 95vh;
+}
+main {
+  padding: 1rem;
+}
+
+/* .card-img-top {
+  max-height: 165px;
+} */
+.card-img-top {
+  height: 200px;
+  width: 250px;
+}
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product {
+  border: 1px black solid;
+  margin: 1rem;
+}
+.rating span {
+  color: #ffc000;
+}
+.colmn {
+  padding-left: 122px;
+}
+
+.product img {
+  width: 216px;
+  height: 200px;
+  padding: 20px;
+}
+.product-info {
+  padding: 1rem;
+  justify-content: center;
+}
+h1 {
+  font-style: italic;
+}
+.btn-primary {
+  background-color: #ffc000;
+  color: black;
+}
+
+.img-large {
+  width: 421px;
+  height: 360px;
+}
+.Item {
+  padding-top: 20px;
+  font-weight: bold;
+}
+
+.img-thumbnail {
+  height: 80px;
+}
+
+form {
+  max-width: 600px;
+  padding-left: 200px;
+}
+.btn {
+  /* margin: 10px; */
+  /* margin-left: 150px; */
+}
+.checkout-steps > div {
+  border-bottom: 0.2rem solid #a0a0a0;
+  color: #a0a0a0;
+}
+.checkout-steps > div.active {
+  border-bottom: 0.2rem solid #f08000;
+  color: #f08000;
+}
+a {
+  margin-top: 7px;
+}
+.abc:hover {
+  color: white;
+}
+.basic-nav-dropdown :hover {
+  color: white;
+}
