@@ -7,7 +7,6 @@ import productRouter from "./routes/productRoutes.js";
 import userRouter from "./routes/userRoutes.js";
 import OrderRouter from "./routes/OrderRoutes.js";
 import cors from "cors";
-
 dotenv.config();
 mongoose
   .connect(process.env.MONGODB_URI)
@@ -33,11 +32,13 @@ app.use("/api/users", userRouter);
 app.use("/api/orders", OrderRouter);
 
 const __dirname = path.resolve();
-console.log("hai", __dirname);
-app.use(express.static(path.join(__dirname, "../../frontend/build")));
+const frontendBuildPath = path.join(__dirname, "../../frontend/build");
+app.use(express.static(frontendBuildPath));
+
 app.get("*", (req, res) =>
-  res.sendFile(path.join(__dirname, "../../frontend/build/index.html"))
+  res.sendFile(path.join(frontendBuildPath, "index.html"))
 );
+
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
 });
