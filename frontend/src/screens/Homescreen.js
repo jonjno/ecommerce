@@ -1,7 +1,7 @@
 import { useEffect, useReducer, useState } from "react";
 import axios from "axios";
 import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/col";
+import Col from "react-bootstrap/Col";
 // import logger from "use-reducer-logger";
 import Product from "../component/product";
 import Loading from "./LoadingBox";
