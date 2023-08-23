@@ -7,6 +7,7 @@ import productRouter from "./routes/productRoutes.js";
 import userRouter from "./routes/userRoutes.js";
 import OrderRouter from "./routes/OrderRoutes.js";
 import cors from "cors";
+
 dotenv.config();
 mongoose
   .connect(process.env.MONGODB_URI)
@@ -31,13 +32,19 @@ app.use("/api/products", productRouter);
 app.use("/api/users", userRouter);
 app.use("/api/orders", OrderRouter);
 
-const __dirname = path.resolve();
-const frontendBuildPath = path.join(__dirname, "../../frontend/build");
-app.use(express.static(frontendBuildPath));
-
-app.get("*", (req, res) =>
-  res.sendFile(path.join(frontendBuildPath, "index.html"))
-);
+const __dirname1 = path.resolve();
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname1, "/frontend/build")));
+  console.log("wow");
+  app.get("*", (req, res) => {
+    console.log(__dirname1);
+    res.sendFile(path.resolve(__dirname1, "frontend", "build", "index.html"));
+  });
+} else {
+  app.get("/", (req, res) => {
+    res.send("API");
+  });
+}
 
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
